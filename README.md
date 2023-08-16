@@ -135,7 +135,7 @@ To run tests, run the following command:
 👤 José Luis Berbesi
 
 - GitHub: [@jlberbesi](https://github.com/jlberbesi)
-- Twitter: [@imberbesi](https://twitter.com/jlberbesi)
+- Twitter: [@imberbesi](https://twitter.com/imberbesi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jlberbesi/)
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -143,10 +143,6 @@ To run tests, run the following command:
 - **Add popup window for reservations 😁**
 - **Add Episodes section 👌**
 - **Add more characters 😎**
-
-## Walkthrough <a name="walkthrough"></a>
-
-You can watch the video description of the project [here](https://---).
 
 <!-- CONTRIBUTING -->
 
