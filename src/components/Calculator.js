@@ -1,43 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Calculator.css';
 import Button from './Button';
+import calculate from '../logic/calculate';
 
 function Calculator() {
+  const [calculatorData, setCalculatorData] = useState({});
+  const { total, next } = calculatorData;
+  const result = next || total || '0';
+
+  function handleClick(buttonName) {
+    const newCalculatorData = calculate(calculatorData, buttonName);
+    setCalculatorData(newCalculatorData);
+  }
+
+  const buttonLayout = [
+    ['AC', '+/-', '%', '÷'],
+    ['7', '8', '9', 'x'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
+  ];
+
   return (
     <div className="calculator">
       <div className="screen">
-        {0}
+        {result}
       </div>
       <div className="buttons">
-        <div className="row">
-          <Button label="AC" />
-          <Button label="+/-" />
-          <Button label="%" />
-          <Button label="÷" special />
-        </div>
-        <div className="row">
-          <Button label="7" />
-          <Button label="8" />
-          <Button label="9" />
-          <Button label="*" special />
-        </div>
-        <div className="row">
-          <Button label="4" />
-          <Button label="5" />
-          <Button label="6" />
-          <Button label="-" special />
-        </div>
-        <div className="row">
-          <Button label="1" />
-          <Button label="2" />
-          <Button label="3" />
-          <Button label="+" special />
-        </div>
-        <div className="row">
-          <Button label="0" doubleWidth />
-          <Button label="." />
-          <Button label="=" special />
-        </div>
+        {buttonLayout.map((row, rowIndex) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <div className="row" key={rowIndex}>
+            {row.map((label) => (
+              <Button
+                key={label}
+                label={label}
+                onClick={() => handleClick(label)}
+                special={label === '÷' || label === 'x' || label === '-' || label === '+' || label === '='}
+                doubleWidth={label === '0'}
+              />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
