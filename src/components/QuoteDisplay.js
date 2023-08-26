@@ -6,7 +6,7 @@ function QuoteDisplay() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchQuote() {
+    const fetchQuote = async () => {
       try {
         const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=funny', {
           method: 'GET',
@@ -18,14 +18,14 @@ function QuoteDisplay() {
         if (data.length > 0) {
           setQuote(data[0].quote);
         } else {
-          setError('No Quotes Found');
+          setError('No Qoutes Found');
         }
+        setLoading(false);
       } catch (err) {
         setError('Error Obtaining Quote');
-      } finally {
         setLoading(false);
       }
-    }
+    };
 
     fetchQuote();
   }, []);
