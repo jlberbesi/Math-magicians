@@ -70,6 +70,7 @@ It is a website for all fans of mathematics. It is a Single Page App (SPA) that 
 - **Quotes from API**
 
 <!-- LIVE DEMO -->
+https://math-magicians-76u7.onrender.com/
 
 <!-- - No live demo available yet -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
